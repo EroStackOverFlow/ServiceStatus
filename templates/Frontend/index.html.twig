@@ -1,0 +1,14 @@
+{# ./templates/default/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+ {% block title %} Frontend {% endblock %}
+
+ {% block body %}
+     <div>
+         <div id="root"></div>
+     </div>
+     {% block javascripts %}
+         {{ encore_entry_script_tags('frontend') }}
+     {% endblock %}
+ {% endblock %}
