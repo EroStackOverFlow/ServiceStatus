@@ -1,0 +1,42 @@
+{
+    "devDependencies": {
+        "@babel/plugin-syntax-jsx": "^7.12.13",
+        "@babel/preset-react": "^7.12.13",
+        "@symfony/stimulus-bridge": "^2.0.0",
+        "@symfony/webpack-encore": "^1.0.0",
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/plugin-transform-runtime": "^7.13.10",
+        "@material-ui/core": "^4.11.3",
+        "@material-ui/icons": "^4.11.2",
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "axios": "^0.21.1",
+        "babel": "^6.23.0",
+        "emailjs-com": "^2.6.4",
+        "npm-watch": "^0.7.0",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.1",
+        "react-client-session": "0.0.7",
+        "react-dom": "^17.0.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.3",
+        "react-web-session": "^0.3.0",
+        "universal-cookie": "^4.0.4",
+        "web-vitals": "^1.0.1",
+        "webpack-notifier": "^1.6.0"
+    }
+}
