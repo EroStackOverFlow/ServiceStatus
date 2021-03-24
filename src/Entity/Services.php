@@ -30,9 +30,9 @@ class Services
     private $details;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="string", length=255)
      */
-    private $isRunning = true;
+    private $status = 'created';
 
     public function getId(): ?int
     {
@@ -63,14 +63,14 @@ class Services
         return $this;
     }
 
-    public function getIsRunning(): ?bool
+    public function getStatus(): ?string
     {
-        return $this->isRunning;
+        return $this->status;
     }
 
-    public function setIsRunning(bool $isRunning): self
+    public function setStatus(string $status): self
     {
-        $this->isRunning = $isRunning;
+        $this->status = $status;
 
         return $this;
     }

@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 
 
-const AddEditService = (props) =>{
+const AddService = (props) =>{
     const data ={
         name:'',
         details:'',
@@ -66,34 +66,6 @@ const AddEditService = (props) =>{
         setTodoData({...todoData, ['name']: ''});
         setTodoData({...todoData, ['details']: ''});
         setTodoData({...todoData, ['status']: ''});
-    }
-
-
-    const deleteTodo = (id) => {
-
-        axios.delete(`https://localhost:8000/api/services/${id}`)
-            .then(res => {
-                console.log(res.data);
-                setIsModified(true);
-            })
-        // window.location.reload(true);
-    }
-    useEffect(function () {
-        servicesDidMount();
-        setIsModified(false);
-    }, [isModified]);
-
-
-    const editTodo = (id) => {
-
-        if (id == idEit && btn === true) {
-            setBtn(false);
-            return true;
-        }
-
-        setIdEdit(id);
-        setBtn(true);
-
     }
 
     useEffect(function () {
@@ -189,63 +161,6 @@ const AddEditService = (props) =>{
         servicesDidMount();
     },[]);
 
-
-
-    export function editService (){
-        return(
-            <div>
-            { btn ?
-                    <Grid
-                        item
-                        xs={12}
-                        sm={12}
-                    >
-                        <Paper className={classes.paperEdit}>Edit a service</Paper>
-                        <Paper className={classes.paper}>
-                            <form className="form-row align-items-center">
-                                <input value={name}
-                                       type="text"
-                                       placeholder={nameEdit}
-                                       onChange={handleChange}
-                                       className="form-control mb-2"
-                                       id="name"
-                                />
-                                <input value={details}
-                                       type="text"
-                                       placeholder={detailsEdit}
-                                       onChange={handleChange}
-                                       className="form-control mb-2"
-                                       id="details"
-                                />
-                                <select onChange={handleChange} id="status" className="form-control mb-2">
-                                    <option value={statusEdit}>{statusEdit}</option>
-                                    <option value="created">created</option>
-                                    <option value="running">running</option>
-                                    <option value="not running">not running</option>
-                                </select>
-                                <Button
-                                    onClick={() => editSubmit()}
-                                    variant="contained"
-                                    color="primary"
-                                    size="large"
-                                    className={classes.button}
-                                    startIcon={<SaveIcon/>}
-                                >
-                                    Edit a service
-                                </Button>
-                            </form>
-                        </Paper>
-
-                    </Grid>
-                    :
-                    <div></div>
-            }
-            </div>
-        )
-    }
-
-
-    export function addService ()  {
         return (
             <Grid
                 item
@@ -287,7 +202,7 @@ const AddEditService = (props) =>{
 
             </Grid>
         )
-    }
+
 }
 
-export default AddEditService;
+export default AddService;

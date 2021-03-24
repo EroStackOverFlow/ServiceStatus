@@ -9,12 +9,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/default", name="default")
+     * @Route("/", name="frontend")
      */
-    public function index(): Response
+    public function frontend()
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return $this->render('Frontend/index.html.twig');
+    }
+
+
+    /**
+     * @Route("/backend/{reactRouting}", name="backend", defaults={"reactRouting": null})
+     */
+    public function backend()
+    {
+        return $this->render('Backend/index.html.twig');
     }
 }
